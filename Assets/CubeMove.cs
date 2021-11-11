@@ -4,17 +4,16 @@ using UnityEngine;
 
 public class CubeMove : MonoBehaviour
 {
-    float clock = 0.0f;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
     // Update is called once per frame
     void Update()
     {
-        clock += Time.deltaTime;
-        transform.position += new Vector3(Mathf.Cos(clock) * MainCircle.instance.radius, 0, 0);
+        MoveInCircle();
+    }
+
+    void MoveInCircle()
+    {
+        Vector3 move = new Vector3(Mathf.Cos(SceneManager.i.clock) * MainCircle.instance.radius, Mathf.Sin(SceneManager.i.clock) * MainCircle.instance.radius);
+        transform.position = move;
     }
 }

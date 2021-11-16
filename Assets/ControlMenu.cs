@@ -47,6 +47,7 @@ public class ControlMenu : MonoBehaviour
 
     public void UpdateRadius()
     {
+        MainCircle.instance.trigFunction = sin_cos.value;
         MainCircle.instance.amplitude = int.Parse(a.text);
         MainCircle.instance.angleCoefficient = int.Parse(b.text);
     }
